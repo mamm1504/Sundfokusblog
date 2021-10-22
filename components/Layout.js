@@ -1,27 +1,17 @@
-import Link from 'next/link'
+import Header from './Header'
+import Footer from './Footer'
+import Head from 'next/head'
 
 export default function Layout({ children }) {
   return (
-    <div className="layout">
-      <header>
-        <Link href="/">
-          <a>
-            <h1>
-              <span>Just Add</span>
-              <span>Marmite</span>
-            </h1>
-            <h2>Spread The Joy</h2>
-          </a>
-        </Link>
-      </header>
-
-      <div className="page-content">
-        { children }
-      </div>
-
-      <footer>
-        <p>Copyright 2021 Just Add Marmite :)</p>
-      </footer>
+    <div className="flex flex-col">
+      <Head>
+        <title>Sense med Mia</title>
+        <link rel="shortcut icon" href="/static/favicon.ico"/>
+      </Head>
+      <Header/>
+      { children }
+      <Footer/>
     </div>
   )
 }
